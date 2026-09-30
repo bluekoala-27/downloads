@@ -1,0 +1,316 @@
+/* ============================================================
+   Downloads — Mgr. Frencken College
+   Colors and type taken from the school's live skin.css
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Quicksand:wght@400;600;700&display=swap');
+
+/* ---------- base ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --paars: #58246A;
+  --donker-paars: #350941;
+  --oranje: #EF881F;
+  --tekst-grijs: #4F4F53;
+  --border-grijs: #707070;
+  --licht-grijs: #D8D8D8;
+  --bg: #ffffff;
+}
+
+body {
+  font-family: 'Quicksand', Verdana, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--tekst-grijs);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- header ---------- */
+
+.site-header {
+  background-color: var(--paars);
+  padding: 0 20px;
+}
+
+.header-inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+
+.logo-mark {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  background: var(--oranje);
+  color: #fff;
+  font-family: 'Allerta Stencil', Verdana, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 48px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.logo-text {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.header-nav {
+  display: flex;
+  gap: 24px;
+}
+
+.header-nav a {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 3px;
+  transition: border-color 0.3s ease;
+}
+
+.header-nav a:hover {
+  border-bottom-color: var(--oranje);
+  text-decoration: none;
+}
+
+/* ---------- wrapper ---------- */
+
+.wrapper {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 50px 20px 70px;
+}
+
+/* ---------- page intro ---------- */
+
+.page-intro {
+  margin-bottom: 52px;
+}
+
+.page-intro h1 {
+  font-family: 'Allerta Stencil', Verdana, Arial, sans-serif;
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--oranje);
+  text-transform: uppercase;
+  padding-bottom: 10px;
+}
+
+.page-intro p {
+  font-size: 15px;
+  color: var(--tekst-grijs);
+  max-width: 420px;
+}
+
+/* ---------- category ---------- */
+
+.category {
+  margin-bottom: 48px;
+}
+
+.category h2 {
+  font-family: 'Allerta Stencil', Verdana, Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--donker-paars);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--oranje);
+  margin-bottom: 20px;
+}
+
+/* ---------- button grid ---------- */
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 10px;
+}
+
+/* ---------- download button ---------- */
+
+.dl-btn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 13px 18px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-align: left;
+  color: #fff;
+  background-color: var(--paars);
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.dl-btn:hover {
+  background-color: var(--oranje);
+  transform: translateX(4px);
+}
+
+.dl-btn:active {
+  transform: translateX(4px) scale(0.98);
+}
+
+.dl-btn:focus-visible {
+  outline: 3px solid var(--oranje);
+  outline-offset: 2px;
+}
+
+.dl-icon {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  opacity: 0.9;
+}
+
+.dl-btn span {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dl-arrow {
+  flex: none;
+  width: 16px;
+  height: 16px;
+  opacity: 0.7;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.dl-btn:hover .dl-arrow {
+  opacity: 1;
+  transform: translateY(3px);
+}
+
+/* clicked feedback */
+
+.dl-btn.done {
+  background-color: var(--donker-paars);
+}
+
+.dl-btn.done .dl-arrow {
+  opacity: 1;
+}
+
+/* ---------- footer ---------- */
+
+.page-footer {
+  margin-top: 60px;
+  padding-top: 24px;
+  border-top: 1px solid var(--licht-grijs);
+  font-size: 13px;
+  color: var(--tekst-grijs);
+}
+
+.page-footer a {
+  color: var(--oranje);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.page-footer a:hover {
+  color: var(--paars);
+  text-decoration: underline;
+}
+
+/* ---------- toast ---------- */
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 32px;
+  transform: translate(-50%, 16px);
+  background-color: var(--donker-paars);
+  color: #fff;
+  font-family: 'Quicksand', Verdana, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px -8px rgba(53, 9, 65, 0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 100;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* ---------- small screens ---------- */
+
+@media (max-width: 600px) {
+  .header-inner {
+    height: 80px;
+  }
+
+  .logo-text {
+    font-size: 13px;
+  }
+
+  .header-nav {
+    display: none;
+  }
+
+  .wrapper {
+    padding: 36px 16px 50px;
+  }
+
+  .page-intro h1 {
+    font-size: 32px;
+  }
+
+  .page-intro {
+    margin-bottom: 36px;
+  }
+
+  .button-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category {
+    margin-bottom: 36px;
+  }
+}
